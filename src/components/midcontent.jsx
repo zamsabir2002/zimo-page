@@ -3,7 +3,7 @@ import React from 'react';
 
 const MidContent = () => {
     return (
-        <div className='self-start m'>
+        <div className='self-start'>
             <div
                 className='text-xl tracking-[6px]'
             >DISCOVER</div>

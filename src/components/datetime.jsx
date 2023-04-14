@@ -58,7 +58,7 @@ const DateTime = () => {
             .then(res => res.json())
             .then(data => {
                 console.log("data", data)
-                setCity(data.address.city)
+                setCity(data.address.city ? data.address.city : data.address.region)
                 setCountry(data.address.country)
                 setCountryCode(data.address.country_code.toUpperCase())
 
@@ -95,10 +95,11 @@ const DateTime = () => {
 
     // console.log("ss", new Date().toLocaleString())
     return (
-        <div className='flex gap-3 items-center text-sm tracking-[3px] '>
-            <div className='flex flex-col'>
+        // <div className='flex gap-3 items-center text-sm tracking-[3px] '>
+        <div className='grid grid-flow-col gap-2 justify-center text-sm tracking-[3px] pr-2'>
+            <div className='flex flex-col flex-wrap text-right '>
 
-                <div>
+                <div className=''>
                     {time.substring(0, 5)} {city}, {country}
                 </div>
 
@@ -111,7 +112,7 @@ const DateTime = () => {
                 </div>
             </div>
 
-            <div>
+            <div className='w-[32px] h-auto'>
                 {countrCode && <img src={`https://flagsapi.com/${countrCode}/flat/32.png`} />}
             </div>
         </div>

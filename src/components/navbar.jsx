@@ -8,10 +8,12 @@ const NavBar = () => {
     return (
         <div className='flex flex-col  justify-between gap-12 w-full'>
 
-            {/* // Icons */}
-            <div className='flex w-full justify-between items-baseline h-[35px]'>
+            {/* // Top Bar */}
+            {/* <div className='flex w-full justify-center h-[35px] items-center'> */}
+            <div className=' w-full grid grid-cols-3 items-center'>
 
-                <div className='flex gap-6 items-baseline'>
+                {/* <div className='flex gap-6 items-center self-start'> */}
+                <div className='flex gap-6'>
                     <img
                         src={icon1.src}
                         alt="icon1"
@@ -24,14 +26,15 @@ const NavBar = () => {
                         className='w-[129.5px] h-[35px]'
                     />
                     <div
-                        className='text-xs '
+                        className='text-xs self-end'
                     >
                         ABOUT
                     </div>
                 </div>
 
                 {/* Middle Icon */}
-                <div className='self-center justify-self-center	'>
+                {/* <div className='self-center justify-self-center	'> */}
+                <div className='text-center justify-self-center'>
                     <img
                         src={icon3.src}
                         alt="icon3"
@@ -40,8 +43,8 @@ const NavBar = () => {
                 </div>
 
                 {/* The date and time */}
-                <div className='self-center flex gap-4 items-center'>
-                    <div className='px-2'>
+                <div className=' flex gap-4 items-center'>
+                    <div className=''>
                         <DateTime />
                     </div>
 
@@ -71,6 +74,8 @@ const NavBar = () => {
             </div>
 
 
+
+            {/* Back Button */}
             <div className='flex gap-3 items-center'>
 
                 <div>

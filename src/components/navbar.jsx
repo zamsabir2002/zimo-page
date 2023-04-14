@@ -31,7 +31,7 @@ const NavBar = () => {
                 </div>
 
                 {/* Middle Icon */}
-                <div className='self-center'>
+                <div className='self-center justify-self-center	'>
                     <img
                         src={icon3.src}
                         alt="icon3"

@@ -3,11 +3,16 @@
 import React, { useEffect, useState } from 'react';
 
 
-const API_END_POINT = "https://api.openweathermap.org/data/2.5/weather?";
-const API_key = "e362fb0d6bf9d40d93000a1f683013c2";
+// const API_END_POINT = "https://api.openweathermap.org/data/2.5/weather?";
+// const API_key = "e362fb0d6bf9d40d93000a1f683013c2";
 
 // const API_END_POINT = "http://api.geonames.org/findNearbyJSON?";
 // const API_key = "sabir_zame2002";
+
+
+
+const API_END_POINT = "https://us1.locationiq.com/v1/reverse?";
+const API_key = "pk.9ad93660d76e1a5d205311f66c1c644e";
 
 
 const DateTime = () => {
@@ -17,10 +22,14 @@ const DateTime = () => {
     const [country, setCountry] = useState('')
     const [time, setTime] = useState('')
     const [date, setDate] = useState('')
+    const [countrCode, setCountryCode] = useState('')
     const [day, setDay] = useState('')
 
     const weeks = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+
     const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+
     const successCallBack = (position) => {
         console.log("suc", position)
         setPosition(position)
@@ -37,12 +46,23 @@ const DateTime = () => {
     const getData = async () => {
         // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
         console.log("po", position)
-        const res = await fetch(`${API_END_POINT}lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_key}`)
+        // const res = await fetch(`${API_END_POINT}lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${API_key}`)
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log("data", data)
+        //         setCity(data.name)
+        //         setCountry(data.sys.country)
+
+
+        const res = await fetch(`${API_END_POINT}key=${API_key}&lat=${position.coords.latitude}&lon=${position.coords.longitude}&format=json`)
             .then(res => res.json())
             .then(data => {
                 console.log("data", data)
-                setCity(data.name)
-                setCountry(data.sys.country)
+                setCity(data.address.city)
+                setCountry(data.address.country)
+                setCountryCode(data.address.country_code.toUpperCase())
+
+
 
                 const date = new Date();
                 const utcDate = Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds(), date.getUTCMilliseconds());
@@ -92,7 +112,7 @@ const DateTime = () => {
             </div>
 
             <div>
-                {country && <img src={`https://flagsapi.com/${country}/flat/32.png`} />}
+                {countrCode && <img src={`https://flagsapi.com/${countrCode}/flat/32.png`} />}
             </div>
         </div>
     );

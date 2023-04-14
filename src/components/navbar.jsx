@@ -40,8 +40,8 @@ const NavBar = () => {
                 </div>
 
                 {/* The date and time */}
-                <div className='self-center flex gap-4'>
-                    <div>
+                <div className='self-center flex gap-4 items-center'>
+                    <div className='px-2'>
                         <DateTime />
                     </div>
 

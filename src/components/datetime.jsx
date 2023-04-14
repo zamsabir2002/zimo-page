@@ -73,16 +73,16 @@ const DateTime = () => {
         getData()
     }, [position])
 
-    console.log("ss", new Date().toLocaleString())
+    // console.log("ss", new Date().toLocaleString())
     return (
-        <div className='flex gap-3 items-center text-sm tracking-widest'>
+        <div className='flex gap-3 items-center text-sm tracking-[3px] '>
             <div className='flex flex-col'>
 
                 <div>
                     {time.substring(0, 5)} {city}, {country}
                 </div>
 
-                <div>
+                <div className='text-[#BE9F56]'>
                     {date &&
                         <div>
                             {weeks[date.getDay()]}, {date.getDate} {month[date.getMonth()]} {date.getFullYear()}
@@ -91,7 +91,9 @@ const DateTime = () => {
                 </div>
             </div>
 
-            <div><img src={`https://flagsapi.com/${country}/flat/32.png`} /></div>
+            <div>
+                {country && <img src={`https://flagsapi.com/${country}/flat/32.png`} />}
+            </div>
         </div>
     );
 }

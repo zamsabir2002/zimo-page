@@ -2,6 +2,7 @@ import React from 'react';
 import icon1 from '../assets/icon1.png'
 import icon2 from '../assets/icon2.png'
 import icon3 from '../assets/icon3.png'
+import DateTime from './datetime';
 
 const NavBar = () => {
     return (
@@ -40,7 +41,9 @@ const NavBar = () => {
 
                 {/* The date and time */}
                 <div className='self-center flex gap-4'>
-                    <div>Some Date and time</div>
+                    <div>
+                        <DateTime />
+                    </div>
 
                     <div className='px-2'>
                         <svg xmlns="http://www.w3.org/2000/svg" width="21.393" height="25.5" viewBox="0 0 21.393 25.5">

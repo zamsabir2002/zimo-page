@@ -8,51 +8,55 @@ const NavBar = () => {
     return (
         <div className='flex flex-col  justify-between gap-12 w-full'>
 
-            {/* // Icons */}
-            <div className='flex w-full justify-between items-baseline h-[35px]'>
+            {/* // Top Bar */}
+            {/* <div className='flex w-full justify-center h-[35px] items-center'> */}
+            <div className='w-full grid grid-flow-col md:grid-cols-3 items-center'>
 
-                <div className='flex gap-6 items-baseline'>
+                {/* <div className='flex gap-6 items-center self-start'> */}
+                <div className='flex gap-1 md:gap-6'>
                     <img
                         src={icon1.src}
                         alt="icon1"
                         // className='w-16 h-12'
-                        className='w-[46.2px] h-[35px]'
+                        className='w-[33px] aspect-[33/25] md:w-[46.2px] '
                     />
                     <img
                         src={icon2.src}
                         alt="icon2"
-                        className='w-[129.5px] h-[35px]'
+                        // md:h-[35px]
+                        className='hidden aspect-[37/10]  md:block md:h-[34.984px] lg:w-[129.5px] '
                     />
                     <div
-                        className='text-xs '
+                        className='text-[0.6rem] mb-0 md:text-xs self-end'
                     >
                         ABOUT
                     </div>
                 </div>
 
                 {/* Middle Icon */}
-                <div className='self-center'>
+                {/* <div className='self-center justify-self-center	'> */}
+                <div className='text-center justify-self-end sm:ml-7 md:m-0 md:justify-self-center'>
                     <img
                         src={icon3.src}
                         alt="icon3"
-                        className='w-[142.8px] h-[35px]'
+                        // h-[35px] 
+                        className='w-[100px] aspect-[102/25] md:w-[142.8px] md:m-0'
                     />
                 </div>
 
                 {/* The date and time */}
-                <div className='self-center flex gap-4 items-center'>
-                    <div className='px-2'>
-                        <DateTime />
-                    </div>
+                <div className=' flex gap-2 lg:gap-4 justify-end items-center'>
+
+                    <DateTime />
 
                     <div className='px-2'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="21.393" height="25.5" viewBox="0 0 21.393 25.5">
+                        <svg className=' aspect-[419431372549/500000000000] w-[18px] sm:w-[21.088px] lg:h-[30px]' xmlns="http://www.w3.org/2000/svg" width="21.393" height="25.5" viewBox="0 0 21.393 25.5">
                             <path id="Path_7582" data-name="Path 7582" d="M102.3,77.923H98.716v-1.3a5.761,5.761,0,0,0-11.522,0v1.3H83.607a1.1,1.1,0,0,0-1.1,1.1V92.46a3.41,3.41,0,0,0,3.406,3.406H99.995A3.41,3.41,0,0,0,103.4,92.46V79.022A1.1,1.1,0,0,0,102.3,77.923Zm-14.114-1.3a4.766,4.766,0,0,1,9.533,0v1.3H88.188ZM102.406,92.46a2.414,2.414,0,0,1-2.411,2.411H85.914A2.414,2.414,0,0,1,83.5,92.46V79.022a.1.1,0,0,1,.1-.1h3.586V81.04a1.244,1.244,0,1,0,1,0V78.918h9.533V81.04a1.244,1.244,0,1,0,.995,0V78.918H102.3a.1.1,0,0,1,.1.1Z" transform="translate(-82.258 -70.616)" fill="#fff" stroke="#fff" strokeWidth="0.5" />
                         </svg>
 
                     </div>
                     <div className='px-2'>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="21.088" height="25.5" viewBox="0 0 21.088 25.5">
+                        <svg className=' aspect-[419431372549/500000000000] w-[18px] sm:w-[21.088px] lg:h-[30px]' xmlns="http://www.w3.org/2000/svg" width="21.088" height="25.5" viewBox="0 0 21.088 25.5">
                             <g id="Group_2867" data-name="Group 2867" transform="translate(0.25 0.25)">
                                 <g id="Group_2661" data-name="Group 2661" transform="translate(3.676 0)">
                                     <path id="Path_7580" data-name="Path 7580" d="M113.274,88.712a6.618,6.618,0,1,1,6.618-6.618A6.625,6.625,0,0,1,113.274,88.712Zm0-11.765a5.147,5.147,0,1,0,5.147,5.147A5.153,5.153,0,0,0,113.274,76.948Z" transform="translate(-106.656 -75.477)" fill="#fff" stroke="#fff" strokeWidth="0.5" />
@@ -71,6 +75,8 @@ const NavBar = () => {
             </div>
 
 
+
+            {/* Back Button */}
             <div className='flex gap-3 items-center'>
 
                 <div>

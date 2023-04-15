@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Clock from 'react-live-clock'
 
 
 // const API_END_POINT = "https://api.openweathermap.org/data/2.5/weather?";
@@ -96,23 +97,36 @@ const DateTime = () => {
     // console.log("ss", new Date().toLocaleString())
     return (
         // <div className='flex gap-3 items-center text-sm tracking-[3px] '>
-        <div className='flex-end inline-grid grid-flow-col gap-2 justify-center text-xs md:text-sm lg:text-base tracking-[3px] pr-2'>
-            <div className='flex flex-col flex-wrap text-right hidden sm:flex max-w-[250px]'>
+
+        <div className='flex-end grid grid-flow-col gap-2 justify-center text-xs md:text-sm lg:text-base tracking-[3px] pr-2 items-center'>
+            <div className='flex flex-col flex-wrap text-right text-xs hidden sm:flex xl:min-w-[326px]'>
 
                 <div className=''>
-                    {time.substring(0, 5)} {city}, {country}
+                    {/* {time.substring(0, 5)} {city}, {country} */}
+                    <Clock
+                        format={'HH:mm'}
+                        ticking={true}
+                    /> {city}, {country}
                 </div>
 
                 <div className='text-[#BE9F56]'>
                     {date &&
                         <div>
-                            {weeks[date.getDay()]}, {date.getDate} {month[date.getMonth()]} {date.getFullYear()}
+                            {/* {weeks[date.getDay()]}, {date.getDate()} {date.getDate} {month[date.getMonth()]} {date.getFullYear()} */}
+                            {console.log("Dte", date)}
+                            <Clock
+                                date={date}
+                                format={'dddd, Mo MMMM  YYYY'}
+                            />
                         </div>
                     }
                 </div>
             </div>
 
-            <div className='w-[25px] aspect-square md:w-[32px]'>
+
+            {/* w-[25px] aspect-square md:w-[32px] */}
+            <div className='aspect-square xl:w-[32px]'>
+
                 {countrCode && <img src={`https://flagsapi.com/${countrCode}/flat/32.png`} />}
             </div>
         </div>

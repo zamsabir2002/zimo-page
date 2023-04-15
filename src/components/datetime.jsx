@@ -96,8 +96,8 @@ const DateTime = () => {
     // console.log("ss", new Date().toLocaleString())
     return (
         // <div className='flex gap-3 items-center text-sm tracking-[3px] '>
-        <div className='grid grid-flow-col gap-2 justify-center text-sm tracking-[3px] pr-2'>
-            <div className='flex flex-col flex-wrap text-right '>
+        <div className='flex-end inline-grid grid-flow-col gap-2 justify-center text-xs md:text-sm lg:text-base tracking-[3px] pr-2'>
+            <div className='flex flex-col flex-wrap text-right hidden sm:flex max-w-[250px]'>
 
                 <div className=''>
                     {time.substring(0, 5)} {city}, {country}
@@ -112,7 +112,7 @@ const DateTime = () => {
                 </div>
             </div>
 
-            <div className='w-[32px] h-auto'>
+            <div className='w-[25px] aspect-square md:w-[32px]'>
                 {countrCode && <img src={`https://flagsapi.com/${countrCode}/flat/32.png`} />}
             </div>
         </div>

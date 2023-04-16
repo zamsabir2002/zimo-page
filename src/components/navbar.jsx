@@ -24,7 +24,7 @@ const NavBar = () => {
                         src={icon2.src}
                         alt="icon2"
                         // md:h-[35px]
-                        className='hidden aspect-[37/10]  md:block md:h-[34.984px] lg:w-[129.5px] '
+                        className='hidden aspect-[37/10]  lg:block md:h-[34.984px] lg:w-[129.5px] '
                     />
                     <div
                         className='text-[0.6rem] mb-0 md:text-xs self-end'
@@ -35,7 +35,7 @@ const NavBar = () => {
 
                 {/* Middle Icon */}
                 {/* <div className='self-center justify-self-center	'> */}
-                <div className='text-center justify-self-end sm:ml-7 md:m-0 md:justify-self-center'>
+                <div className='text-center min-w-[98px] justify-self-center md:ml-[-95%] min-[932px]:ml-[-80%] lg:ml-[-30%] md:justify-self-center'>
                     <img
                         src={icon3.src}
                         alt="icon3"
